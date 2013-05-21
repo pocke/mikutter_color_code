@@ -11,10 +11,10 @@ Plugin.create(:color_code) do
       hashtags.each do | tag |
         val = tag[:text]
         if /^[0-9a-fA-F]{6,6}$/ =~ val then
-	  color = Array.new(3)
-	  3.times do |i|
-	    color[i] = val[i*2,2].to_i(16) << 8
-	  end
+          color = Array.new(3)
+          3.times do |i|
+            color[i] = val[i*2,2].to_i(16) << 8
+          end
         end
       end
     end
