@@ -3,11 +3,8 @@
 Plugin.create(:color_code) do
 
   filter_message_background_color do | mp, color |
-    begin
-      #システムメッセージにentitiesなんてない
+    if !mp.to_message.system? then
       hashtags = mp.to_message[:entities][:hashtags]
-    rescue
-    else
       hashtags.each do | tag |
         val = tag[:text]
         if /^[0-9a-fA-F]{6,6}$/ =~ val then
