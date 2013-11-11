@@ -1,5 +1,9 @@
 # -*- coding: utf-8 -*-
 
+# Copyright 2013, pocket
+# Licensed MIT
+# http://opensource.org/licenses/mit-license.php
+
 Plugin.create(:color_code) do
 
   filter_message_background_color do | mp, color |
